@@ -1,22 +1,47 @@
 const Discord = require('discord.js')
 
-const GameCord = require('gamecord-fork').djs
-
 const db = require('croxydb')
 
  exports.run = async (client, message, args) => {
 
-    
+    const { Snake } = require('weky');
 
-    new GameCord.SnakeGame(message)
+new Snake({
 
-        .setTitle('Yılan Oyunu')
+    message: message,
 
-        .setColor('#7298da')
+    embed: {
 
-        .setTime(60000) // Always better to set max time because the default one is just 5s
+    title: 'Snake', //embed title
 
-                .run()
+    color: "#gt4668", //embed color
+
+    gameOverTitle: "Game Over", //game over embed title
+
+    },
+
+    emojis: {
+
+      empty: '⬛', //zone emoji
+
+      snakeBody: '⏺️', //snake
+
+      food: '🍏', //food emoji
+
+      //control
+
+      up: '⬆️', 
+
+      right: '⬅️',
+
+      down: '⬇️',
+
+      left: '➡️',
+
+      },
+
+    }).start()
+
 
 }
 

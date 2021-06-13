@@ -54,7 +54,6 @@ module.exports = async (client, message) => {
   }
     if (cmd) {
       
-             if
      
     talkedRecently.add(message.author.id);
 
