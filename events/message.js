@@ -54,6 +54,15 @@ module.exports = async (client, message) => {
   }
     if (cmd) {
       
+             if(cmd.conf.uyelık === true) {
+
+        let iugur = message.author.id
+
+        let sorgulama = client.roles.cache.get("853649931448483840").members.cache.get(iugur)
+
+        if(!sorgulama) return message.inlineReply('<:bakimda:798582408642560110> Bu Komudu kullanabilmek için premium üye olmanız lazım! \n<:codesty_support:844468556430704640> Destek için [Destek sunucum](https://discord.gg/KZfAEjrPUF)')
+
+        }
      
     talkedRecently.add(message.author.id);
 
