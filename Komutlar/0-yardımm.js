@@ -161,7 +161,8 @@ exports.run = async (client, message, args) => {
 > **g.play-store** - Yazdığınız uygulama hakkında play store' daki bilgilerini verir. 
 > **g.steam** - Yazdığınız oyun hakkında steam' dan bilgi verir. 
 > **g.mc-skin** - Yazdığın Minecraft oyuncu skin atar. 
-> **g.server-icon** - Sunucu icon atar. > **g.sor** - Bota soru sorarsınız. 
+> **g.server-icon** - Sunucu icon atar. 
+> **g.sor** - Bota soru sorarsınız. 
 > **g.yazıtura** - Yazı tura atarsınız. 
 > **g.piyango** - Şanslı isen oyna. 
 > **g.yılbaşı** - Yılbaşına kalan süre söyler. 
