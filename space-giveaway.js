@@ -530,44 +530,14 @@ const TempChannels = require("discord-temp-channels");
 
 const tempChannels = new TempChannels(client);
 
-client.on("message", (message) => {
+client.on("ready", () => {
 
-    if(message.content.startsWith("g.geçici-kanal")){
+    if (!db.get("temp-channels")) db.set("temp-channels", []);
 
-        if(tempChannels.channels.some((channel) => channel.channelID === message.member.voice.channel.id)){
+    db.get("temp-channels").forEach((channelData) => {
 
-            return message.channel.send("Your voice channel is already a main voice channel");
+        tempChannels.registerChannel(channelData.channelID, channelData.options);
 
-        }
-
-        const options = {
-
-            childAutoDeleteIfEmpty: true,
-
-            childAutoDeleteIfOwnerLeaves: true,
-
-            childMaxUsers: 3,
-
-            childBitrate: 64000,
-
-            childFormat: (member, count) => `#${count} | ${member.user.username}'s lounge`
-
-        };
-
-        tempChannels.registerChannel(message.member.voice.channel.id, options);
-
-        db.push("temp-channels", {
-
-            channelID: message.member.voice.channel.id,
-
-            options: options
-
-        });
-
-        message.channel.send("Your voice is now a main voice channel!");
-
-    }
+    });
 
 });
-
-        
