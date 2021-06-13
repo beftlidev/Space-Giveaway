@@ -1,42 +1,41 @@
-const { tictactoe } = require('reconlx') 
+const Discord = require("discord.js")
 
-exports.run = (client, message) => {
+exports.run = async (client, message, args) => {
 
-        const member = message.mentions.members.first()
+const opponent = message.mentions.users.first();
 
-            if(!member)  return  message.inlineReply('<:bakimda:798582408642560110> Bir kişi etiketlemelisin.')
+if (!opponent) return message.channel.send(`Please mention who you want to challenge at tictactoe`);
 
-        new tictactoe({
+const { TicTacToe } = require('weky')
 
-            player_two: member,
+const game = new TicTacToe({
 
-            message: message
+    message: message,
 
-        })
+    opponent: opponent, // opponent
 
-    
-  
-};
+    xColor: 'red', // x's color
+
+    oColor: 'blurple', //zero's color
+
+    xEmoji: '❌',  //t he x emoji
+
+    oEmoji: '0️⃣' ,// the zero emoji
+
+})
+
+game.start()
+
+} 
 
 exports.conf = {
 
-  enabled: true,
+aliases: [] 
 
-  guildOnly: false,
-
-  aliases: [""],
-
-  permLevel: 0
-
-};
+} 
 
 exports.help = {
 
-  name: "xox",
+name: "xox" 
 
-  description: "Komut Açıklama",
-
-  usage: "Kullanımı"
-
-};
-
+} 
