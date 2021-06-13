@@ -103,9 +103,7 @@ exports.run = async (client, message, args) => {
 > **g.yedek bilgi** - Oluşturduğunuz yedek hakkında bilgi alırsınız. 
 > **g.yedek yükle** - Oluşturdupunuz yedeği geri yüklersiniz.
 > **g.yapay-zeka aç** - Yapay zeka açarsınız. 
-> **g.yapay-zeka kapat** - Yapay zeka kapatırsınız.
-> **g.geçici-kanal** - Bulunduğunuz kanalı geçici ses kanalı oluşturma yapar. - BETA! 
-`) 
+> **g.yapay-zeka kapat** - Yapay zeka kapatırsınız.`) 
    const embed5 = new Discord.MessageEmbed() 
 
 .setColor("GREEN") 
