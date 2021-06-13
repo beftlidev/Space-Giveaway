@@ -212,6 +212,7 @@ exports.run = async (client, message, args) => {
 > **g.type-fast** - Hızlı yaz oyunu oynarsınız. 
 > **g.blackjack** - Blackjack Oynarsınız. 
 > **g.pokemon** - Pokemon oyunu oynarsınız.
+> **g.fight** - Etiketlediğiniz kişi ile savaşırsınız. 
 `) 
 
    const embed10 = new Discord.MessageEmbed() 
