@@ -10,7 +10,6 @@ exports.conf = {
 
 aliases: [] 
 
-
 }
 
 exports.help = {
