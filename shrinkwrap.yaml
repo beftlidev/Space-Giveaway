@@ -22,6 +22,7 @@ dependencies:
   discord-music-system: 3.3.15
   discord-player: 4.0.7
   discord-slider: 1.1.6
+  discord-temp-channels: 2.0.0
   discord-together: 1.1.14
   discord-tr-akinator: 1.0.1
   discord.js: 12.5.3
@@ -1836,6 +1837,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-MnN+ZYjZ73IAaE4E+8An7p7SfST7Mf89PaxRLSx1pAdypXjLuOiD0kZGyMJFhmpGHILUvR6G4Zu+dwKYkZ9flw==
+  /discord-temp-channels/2.0.0:
+    dependencies:
+      discord.js: 12.5.3
+    dev: false
+    resolution:
+      integrity: sha512-a+f2lQkelzkSl9S+ggHHbwk7uw/giR7N49mgm8Bps3BFfKBqb8X2k16PAbsq47IT7B5+qxARMQWFsdIFgaBIyA==
   /discord-together/1.1.14:
     dependencies:
       node-fetch: 2.6.1
@@ -6089,6 +6096,7 @@ specifiers:
   discord-music-system: ^3.3.15
   discord-player: ^4.0.7
   discord-slider: ^1.1.5
+  discord-temp-channels: ^2.0.0
   discord-together: ^1.1.14
   discord-tr-akinator: ^1.0.1
   discord.js: ^12.5.3

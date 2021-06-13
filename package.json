@@ -69,7 +69,8 @@
     "discord-buttons": "^3.2.1",
     "djs-tickets": "^5.0.0",
     "discord-buttons-react": "^0.0.3",
-    "discord-embeds-pages-buttons": "^1.1.8"
+    "discord-embeds-pages-buttons": "^1.1.8",
+    "discord-temp-channels": "^2.0.0"
   },
   "scripts": {
     "start": "node shard.js"

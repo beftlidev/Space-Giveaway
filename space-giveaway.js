@@ -526,5 +526,48 @@ client.on("message", async message => {
   }
 });
 
+const TempChannels = require("discord-temp-channels");
+
+const tempChannels = new TempChannels(client);
+
+client.on("message", (message) => {
+
+    if(message.content.startsWith("g.geçici-kanal")){
+
+        if(tempChannels.channels.some((channel) => channel.channelID === message.member.voice.channel.id)){
+
+            return message.channel.send("Your voice channel is already a main voice channel");
+
+        }
+
+        const options = {
+
+            childAutoDeleteIfEmpty: true,
+
+            childAutoDeleteIfOwnerLeaves: true,
+
+            childMaxUsers: 3,
+
+            childBitrate: 64000,
+
+            childFormat: (member, count) => `#${count} | ${member.user.username}'s lounge`
+
+        };
+
+        tempChannels.registerChannel(message.member.voice.channel.id, options);
+
+        db.push("temp-channels", {
+
+            channelID: message.member.voice.channel.id,
+
+            options: options
+
+        });
+
+        message.channel.send("Your voice is now a main voice channel!");
+
+    }
+
+});
 
         
