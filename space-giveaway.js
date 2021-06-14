@@ -154,9 +154,8 @@ client.on("message", async (msg, member, guild) => {
   if (i === "açık") {
     if (msg.content.toLowerCase() === "sa") {
       //if (msg.content.toLowerCase() === 'Sa') {
-      msg.inlineReply(
-        "Aleyküm Selam Hoşgeldin Kankam <a:nrp:821434879539281931>"
-      );
+      msg.inlineReply("Aleyküm Selam Hoşgeldin Kankam <a:nrp:821434879539281931>"
+ );
     }
   }
 });
