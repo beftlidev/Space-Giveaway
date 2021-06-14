@@ -192,6 +192,7 @@ exports.run = async (client, message, args) => {
 > **g.triggered** - Pp' nizi triggered efekti katar.
 > **g.trash** - Etiketlediğiniz kişiye çöp efekti katar.
 > **g.batslap** - Etiketlediğiniz kişiye batslap efekti katar.
+
 `) 
 
    const embed9 = new Discord.MessageEmbed() 
