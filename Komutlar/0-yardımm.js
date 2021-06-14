@@ -96,8 +96,11 @@ exports.run = async (client, message, args) => {
 > **g.yavaş-mod** - Kullanılan kanalda yavaş mod açarsınız. 
 > **g.emoji-ekle** - Emoji eklersiniz. 
 > **g.sil** - <0/100> Arasında mesaj silersiniz.
-> **g.sa-as** -  Sa as mesaj açarsınız. 
-> **g.sa-as-emoji** - Sa as emoji açarsınız. 
+> **g.sa-as aç** -  Sa as mesaj açarsınız. 
+> **g.sa-as-emoji aç** - Sa as emoji açarsınız. 
+> **g.sa-as kapat** - Sa As kapatırsınız. 
+> **g.sa-as-emoji kapat** - Sa as emoji kapatırsınız. 
+> **g.sa-as mesaj** - Sa as mesaj ayarlarsınız. 
 > **g.ayarlar** - Ayarları gösterir. 
 > **g.yedek oluştur** - Yedek oluşturursunuz.
 > **g.yedek bilgi** - Oluşturduğunuz yedek hakkında bilgi alırsınız. 
