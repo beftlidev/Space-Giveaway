@@ -44,7 +44,7 @@ exports.run = async(client, msg, args) => {
 
   db.set(`saasm_${msg.guild.id}`,`${args.slice(1).join(" ")}`)
 
-   msg.inlineReply(`<a:dogru:754262469186289706> Sunucun için sa as mesajı \n${args.slice(1).join(" ")} \nOlarak ayarlandı. `) 
+   msg.inlineReply(`<a:dogru:754262469186289706> Sunucun için sa as mesajı \n\`${args.slice(1).join(" ")}\` \nOlarak ayarlandı. `) 
 
 } 
 
