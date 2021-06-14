@@ -31,9 +31,6 @@ const embed = new Discord.MessageEmbed()
 .addField("<:codesty_join:844468549417697350> Sunucu özel url", `${message.guild.vanityURLCode || "Yok"}`) 
 
 .setThumbnail(`https://cdn.discordapp.com/icons/${message.guild.id}/${message.guild.icon}.webp`) 
-
-.setImage(`https://cdn.discordapp.com/banners/${message.guild.id}/${message.guild.banner}.webp`) 
-
 .setColor("GREEN") 
 
 message.channel.send(embed) 
