@@ -218,6 +218,8 @@ client.on("message", async message => {
   });
 });
 
+
+
 client.on("message", async message => {
   let gold = db.fetch(`gold_${message.author.id}`);
   if (gold === "gold") {
