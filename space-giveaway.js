@@ -525,3 +525,20 @@ client.on("message", async message => {
   }
 });
 
+client.on('messageDelete', async message => {
+
+  if(message.author.bot || !message.content) return;
+  db.push(`snipe_${message.guild.id}`, {
+    author: message.author,
+    authorTAG: message.author.tag,
+    authorID: message.author.id,
+    authorUSERNAME: message.author.username,
+    authorDISCRIMINATOR: message.author.discriminator,
+    messageID: message.id,
+    messageCHANNEL: message.channel,
+    messageCHANNELID: message.channel.id,
+    messageCONTENT: message.content,
+    messageCREATEDAT: message.createdTimestamp
+  });
+});
+
