@@ -49,11 +49,11 @@ if (!args[0]) {
     }
 const user = message.mentions.members.first();
 const msg = args.slice(1).join(" ");
-  const larakufur = ["@everyone", "@here"];
+  const larakufur = ["@everyone", "@here", "@"];
 
         if (larakufur.some(word => msg.includes(word))) {
 
-          message.inlineReply('**Everyone here atma!!**')
+          message.inlineReply('**Mesajında etiket olmamalı!!**')
 
   return;
 
