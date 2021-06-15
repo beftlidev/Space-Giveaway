@@ -57,7 +57,11 @@ module.exports = async (client, message) => {
       let bakım =  db.fetch('bakım');
   if(message.author.id !== ayarlar.sahip){
   if(bakım){
-  return message.channel.send(`<:codesty_cross:844468546930606100> **Botunuz bakıma alınmıştır!** \n**<:codesty_support:844468556430704640> **Bakım Sebebi: \`${bakım}\`**`)
+    const embed = new Discord.MessageEmbed() 
+   .setColor("RED") 
+   .setTitle("Space Giveaway") 
+ .setDescription(`<:codesty_cross:844468546930606100> **Botumuz bakıma alınmıştır!** \n<:codesty_support:844468556430704640> **Bakım Sebebi:** \`${bakım}\``)
+    return message.channel.send(embed) 
      }
     } 
     talkedRecently.add(message.author.id);

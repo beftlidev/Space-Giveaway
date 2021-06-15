@@ -14,7 +14,7 @@ if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("<:bak
 
     .setDescription(desc)
 
-    .setColor(color)
+    .setColor("BLURPLE")
 
     .setAuthor(message.author.username, message.author.displayAvatarURL));
 
