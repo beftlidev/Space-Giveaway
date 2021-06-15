@@ -49,7 +49,16 @@ if (!args[0]) {
     }
 const user = message.mentions.members.first();
 const msg = args.slice(1).join(" ");
-if msg.includes('@everyone') || yazı.includes('@here')) return message.reply('Amacın ne aq cocu')
+  const larakufur = ["@everyone", "@here"];
+
+        if (larakufur.some(word => msg.includes(word))) {
+
+          message.inlineReply('**Everyone here atma!!**')
+
+  return;
+
+        } 
+  message.delete()
 const xd = new sudo({
 
     message: message,

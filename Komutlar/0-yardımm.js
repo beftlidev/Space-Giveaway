@@ -107,7 +107,7 @@ exports.run = async (client, message, args) => {
 > **g.yedek yükle** - Oluşturdupunuz yedeği geri yüklersiniz.
 > **g.yapay-zeka aç** - Yapay zeka açarsınız. 
 > **g.yapay-zeka kapat** - Yapay zeka kapatırsınız.
-> **g.snipe <0/sonsuz> - Yazdığınız miktarda silinen mesajları atar. 
+> **g.snipe <0/sonsuz>** - Yazdığınız miktarda silinen mesajları atar. 
 `) 
    const embed5 = new Discord.MessageEmbed() 
 
@@ -197,6 +197,7 @@ exports.run = async (client, message, args) => {
 > **g.trash** - Etiketlediğiniz kişiye çöp efekti katar.
 > **g.batslap** - Etiketlediğiniz kişiye batslap efekti katar.
 > **g.sunucu-bilgi** - Sunucu hakkında bilgi verir. 
+> **g.fake-mesaj [etiket] [mesaj]** - Etiketlediğiniz kişiye fake mesaj attırırsınız. 
 `) 
 
    const embed9 = new Discord.MessageEmbed() 
