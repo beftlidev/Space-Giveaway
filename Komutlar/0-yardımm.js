@@ -107,6 +107,7 @@ exports.run = async (client, message, args) => {
 > **g.yedek yükle** - Oluşturdupunuz yedeği geri yüklersiniz.
 > **g.yapay-zeka aç** - Yapay zeka açarsınız. 
 > **g.yapay-zeka kapat** - Yapay zeka kapatırsınız.
+> **g.snipe <0/sonsuz> - Yazdığınız miktarda silinen mesajları atar. 
 `) 
    const embed5 = new Discord.MessageEmbed() 
 
