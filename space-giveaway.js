@@ -218,7 +218,14 @@ client.on("message", async message => {
   });
 });
 
-
+client.on("message", async message => {
+  const ai = require("@codare/codare.ai");
+  if (message.channel.type !== "dm") return;
+  let soru = message.content;
+  ai.sor(soru).then(iugur => {
+      return message.channel.send(iugur);
+    }, )
+}); 
 
 client.on("message", async message => {
   let gold = db.fetch(`gold_${message.author.id}`);
