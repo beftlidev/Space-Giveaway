@@ -2,8 +2,6 @@ const discord = require("discord.js");
 
 const db = require("croxydb");
 
-const { MessageButton } = require("discord-buttons") 
-
 exports.run = async (client, message, args) => {
 
  let blue = new discord.MessageEmbed().setColor("BLUE");
@@ -28,29 +26,15 @@ let sira = db.fetch(`serverData.${message.guild.id}.waitSize`) || 0;
 
   if(!botprefix) return message.inlineReply('<:codesty_cross:844468546930606100> Lütfen bir bot Prefix gir!')
 
-let perm = new MessageButton()
-
-    .setLabel("0 Perm")
-
-    .setURL(`https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0`)
-
-    .setStyle("url"); 
-
-let perm2 = new MessageButton()
-
-    .setLabel("8 Perm")
-
-    .setURL(`https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=8`)
-
-    .setStyle("url"); 
-
   let embed = new discord.MessageEmbed()
 
   .setAuthor(message.author.username, message.author.displayAvatarURL({dynamic:true}))
 
-  .addField("Bot ID", botid, true)
+  .addField("<:codesty_join:844468549417697350> Bot ID", botid, true)
 
-  .addField("Bot Prefix", botprefix, true)
+  .addField("<:codesty_join:844468549417697350> Bot Prefix", botprefix, true)
+
+  .addField("<:codesty_join:844468549417697350> Bot Davet", "<:codesty_join:844468549417697350> Davet: [0 Perm](https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0) **|** [8 Perm](https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=8)") 
 
   .setColor("BLUE")
 
@@ -68,21 +52,18 @@ let perm2 = new MessageButton()
 
       } else {
 
-      if(message.channel.id !== basvuru) return message.reply('<:codesty_cross:844468546930606100> Lütfen bunu <#'+basvuru+'> kanalında dene!')
+      if(message.channel.id !== basvuru) return message.reply('<:codesty_cross:844468546930606100> Lütfen <#${başvuru}> kanalında bot ekle!')
 
       if(client.channels.cache.get(basvuru).send(embed));
 
       if(client.channels.cache.get(botlog).send(blue.setDescription(`<:codesty_check:844468545877442560> Bir bot eklendi!
-<:codesty_join:844468549417697350> Bot: ${botid} **|** <@${botid}> **|** <@\`${botid}\`>
+<:codesty_join:844468549417697350> Bot: ${botid} **|** <@${botid}>
 <:codesty_join:844468549417697350> Sahip: ${message.author}
 <:codesty_join:844468549417697350> Sıra: ${sira}
 <:codesty_join:844468549417697350> Davet: [0 Perm](https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0) **|** [8 Perm](https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=8)`)));
       message.inlineReply('<:codesty_check:844468545877442560> Bot ekleme isteğin alındı!')
-
       db.set(`bot.id.${botid}`, 'yes')
-
       db.add(`serverData.${message.guild.id}.waitSize`, 1)
-
       };
 
     };
@@ -95,4 +76,4 @@ exports.help = {
 
 name: "bot-ekle" 
 
-} 
+}  
