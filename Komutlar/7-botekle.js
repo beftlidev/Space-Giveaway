@@ -2,6 +2,8 @@ const discord = require("discord.js");
 
 const db = require("croxydb");
 
+const { MessageButton } = require("discord-buttons") 
+
 exports.run = async (client, message, args) => {
 
  let blue = new discord.MessageEmbed().setColor("BLUE");
@@ -23,6 +25,22 @@ exports.run = async (client, message, args) => {
   if(!botid) return message.inlineReply('<:codesty_cross:844468546930606100> Lütfen bir bot ID gir!')
 
   if(!botprefix) return message.inlineReply('<:codesty_cross:844468546930606100> Lütfen bir bot Prefix gir!')
+
+let perm = new MessageButton()
+
+    .setLabel("0 Perm")
+
+    .setURL(`https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0`)
+
+    .setStyle("url"); 
+
+let perm2 = new MessageButton()
+
+    .setLabel("8 Perm")
+
+    .setURL(`https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=8`)
+
+    .setStyle("url"); 
 
   let embed = new discord.MessageEmbed()
 
@@ -53,7 +71,7 @@ exports.run = async (client, message, args) => {
       if(client.channels.cache.get(basvuru).send(embed));
 
       if(client.channels.cache.get(botlog).send(blue.setDescription(`<:codesty_check:844468545877442560> Bir bot eklendi!
-Bot: ${botid} **|** <@${botid}> **|** <@\`${botid}\`>
+Bot: ${botid} **|** <@${botid}>
 Sahip: ${message.author}
 Davet: [0 Perm](https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0) **|** [8 Perm](https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=8)`)));
       message.inlineReply('<:codesty_check:844468545877442560> Bot ekleme isteğin alındı!')
