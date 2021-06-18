@@ -25,10 +25,11 @@ const path = require("path");
 const { GiveawaysManager } = require("discord-giveaways");
 const manager = new GiveawaysManager(client, {
   storage: "./çekilişler.json",
-  updateCountdownEvery: 10000,
+  updateCountdownEvery: 30000,
   default: {
     botsCanWin: false,
-    embedColor: "RANDOM",
+    embedColor: "GREEN",
+    embedColorEnd: "RED", 
     reaction: "🎉"
   }
 });
