@@ -4,11 +4,9 @@ const db = require('croxydb')
 
     exports.run = (client, message, args) => {
 
-        // Hata
-
         if(!args[0]){
 
-            const kadirfi = new Discord.MessageEmbed()
+            const not = new Discord.MessageEmbed()
 
             .setDescription(`**Lütfen Komutu Doğru Kullanın**
 
@@ -19,15 +17,13 @@ const db = require('croxydb')
 
             .setColor('RANDOM')
 
-            return message.channel.send(kadirfi)
+            return message.channel.send(not)
 
         }
 
-       
-
         if(args[0] === "1"){
 
-            db.delete(`codemarefinot1_${message.author.id}`)
+            db.delete(`not1_${message.author.id}`)
 
             message.inlineReply('<:calisiyor:798582407393312808> 1. Notunuz Datadan Silindi')
 
@@ -35,15 +31,15 @@ const db = require('croxydb')
 
         if(args[0] === "2"){
 
-            db.delete(`codemarefinot2_${message.author.id}`)
+            db.delete(`not2_${message.author.id}`)
 
             message.inlineReply('<:calisiyor:798582407393312808> 2. Notunuz Datadan Silindi')
 
-        }
+       } 
 
         if(args[0] === "3"){
 
-            db.delete(`codemarefinot3_${message.author.id}`)
+            db.delete(`not3_${message.author.id}`)
 
             message.inlineReply('<:calisiyor:798582407393312808> 3. Notunuz Datadan Silindi')
 
@@ -59,13 +55,7 @@ const db = require('croxydb')
 
 exports.conf = {
 
-    enabled: true,
-
-    guildOnly: false,
-
-    aliases: ['Not-sil','NOT-SİL','not-SİL','NOT-sil'],
-
-    permLevel: 0
+    aliases: []
 
 }
 
@@ -73,4 +63,4 @@ exports.help = {
 
     name: 'not-sil'
 
-}
+} 

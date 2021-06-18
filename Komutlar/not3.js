@@ -1,46 +1,49 @@
 const Discord = require('discord.js')
+const disbutpages = require("discord-embeds-pages-buttons")
+
+ const disbut = require("discord-buttons") 
 
 const db = require('croxydb')
 
     exports.run = (client, message, args) => {
 
-        // Let Tanımları
+        let not1 = db.fetch(`not1_${message.author.id}`)
 
-        let not1 = db.fetch(`codemarefinot1_${message.author.id}`)
+        let not2 = db.fetch(`not2_${message.author.id}`)
 
-        let not2 = db.fetch(`codemarefinot2_${message.author.id}`)
+        let not3 = db.fetch(`not3_${message.author.id}`)
 
-        let not3 = db.fetch(`codemarefinot3_${message.author.id}`)
+const e1 = new Discord.MessageEmbed() 
 
-        const codemarefi = new Discord.MessageEmbed()
+.setTitle("1.Notun")
 
-        .setDescription(`
+.setDescription(`${not1 || "<a:bulut:763614153826107393> Veri yok"}`) 
 
-            ${message.author} **Notların**
+.serColor("GREEN")
 
-> <a:bytcec:818712678146113567> **Not 1 :** ${not1 || "<a:bulut:763614153826107393> Veri yok"}\n
+const e2 = new Discord.MessageEmbed() 
 
-> <a:bytcec:818712678146113567> **Not 2 :** ${not2 || "<a:bulut:763614153826107393> Veri Yok"}\n
+.setTitle("2.Notun")
 
-> <a:bytcec:818712678146113567> **Not 3 :** ${not3 || "<a:bulut:763614153826107393> Veri Yok"}
+.setDescription(`${not2 || "<a:bulut:763614153826107393> Veri yok"}`) 
 
-        `)
+const e3 = new Discord.MessageEmbed() 
 
-        .setColor('RANDOM')
+.setTitle("3.Notun")
 
-        message.channel.send(codemarefi)
+.setDescription(`${not3 || "<a:bulut:763614153826107393> Veri yok"}`) 
 
-    } 
+var pages = [e1, e2, e3]
+
+    disbutpages.pages(client, message, pages, 300000, disbut, "red", "844468549417697350", "844468548079321089", "844468546930606100")
+
+  
+
+}
 
 exports.conf = {
 
-    enabled: true,
-
-    guildOnly: false,
-
-    aliases: ['Notlarım','NOTLARIM'],
-
-    permLevel: 0
+    aliases: [] 
 
 }
 
@@ -48,4 +51,4 @@ exports.help = {
 
     name: 'notlarım'
 
-}
+} 
