@@ -37,7 +37,7 @@ exports.run = async (client, message, args) => {
 
   .addField("<:emoji_ab:848482971013873694> Emoji Komutları", "Gel Emojilere bir göz atalım?") 
    
-  .addField(":neutral:846276939185520640> Bot list Komutları", "Bot list sistemi kuralımmı :3")
+  .addField("<:neutral:846276939185520640> Bot list Komutları", "Bot list sistemi kuralımmı :3")
   .setFooter("Space Giveaway", client.user.displayAvatarURL())
 
     const embed2 = new Discord.MessageEmbed()

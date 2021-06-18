@@ -160,7 +160,7 @@ exports.run = async (client, message, args) => {
 
     );
 
-  } else if (arg == "bot-yetkili-rol") {
+  } else if (arg == "sıfırla") {
 
     db.delete(`bot.yetkili.rol.${message.guild.id}`);
 
