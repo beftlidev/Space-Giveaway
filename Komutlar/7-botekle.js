@@ -3,6 +3,7 @@ const discord = require("discord.js");
 const db = require("croxydb");
 
 exports.run = async (client, message, args) => {
+ let blue = new discord.MessageEmbed().setColor("BLUE");
 
   let botlog = db.fetch(`bot.log.${message.guild.id}`);
 
@@ -32,7 +33,7 @@ exports.run = async (client, message, args) => {
 
   .setColor("BLUE")
 
-  .setFooter(client.users.cache.get(botid).username+" için istek geldi.")
+  .setFooter("Space Giveaway")
 
   let botvaryok = db.fetch(`bot.id.${botid}`)
 
@@ -50,7 +51,8 @@ exports.run = async (client, message, args) => {
 
       if(client.channels.cache.get(basvuru).send(embed));
 
-      if(client.channels.cache.get(botlog).send('<:codesty_check:844468545877442560> ${message.author} adlı kullanıcı <@${botid}> adlı botu sıraya ekledi!'));
+      if(client.channels.cache.get(botlog).send(blue.setDescription(`<:codesty_check:844468545877442560> ${message.author} adlı kullanıcı <@${botid}> adlı botu sıraya ekledi!
+Bot ID: ${botid} **|** <@${botid}> **|** \`<@${botid}>\``)));
 
       message.inlineReply('<:codesty_check:844468545877442560> Bot ekleme isteğin alındı!')
 
