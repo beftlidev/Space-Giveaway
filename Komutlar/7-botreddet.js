@@ -36,7 +36,7 @@ exports.run = async (client, message, args) => {
 
       message.inlineReply(`<:codesty_check:844468545877442560> <@${botid}> adlı bot reddedildi!`)
 
-      db.delete(`bot.id.${botid}`)
+      db.delete(`bot.id.${message.guild.id}.${botid}`)
 
       db.subtract(`serverData.${message.guild.id}.waitSize`, 1)
 

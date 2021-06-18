@@ -62,7 +62,7 @@ let sira = db.fetch(`serverData.${message.guild.id}.waitSize`) || 0;
 <:codesty_join:844468549417697350> Sıra: ${sira}
 <:codesty_join:844468549417697350> Davet: [0 Perm](https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=0) **|** [8 Perm](https://discord.com/oauth2/authorize?client_id=${botid}&scope=bot&permissions=8)`)));
       message.inlineReply('<:codesty_check:844468545877442560> Bot ekleme isteğin alındı!')
-      db.set(`bot.id.${botid}`, 'yes')
+      db.set(`bot.id.${message.guild.id}.${botid}`, 'yes')
       db.add(`serverData.${message.guild.id}.waitSize`, 1)
       };
 
