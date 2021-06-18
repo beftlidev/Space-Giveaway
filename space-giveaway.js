@@ -9,7 +9,6 @@ require("discord-slider")(client);
 const disbut = require("discord-buttons");
 //require("./util/eventLoader")(client);
 //deneme 
-client.db = db;
 require("./inlinereply.js");
 const prefix = "g.";
 client.commands = new Discord.Collection();
