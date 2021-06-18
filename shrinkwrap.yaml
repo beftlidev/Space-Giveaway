@@ -58,7 +58,7 @@ dependencies:
   simple-youtube-api: 5.2.1
   speedtest-net: 2.2.0
   steam-provider: 0.3.2
-  topgg-autoposter: 1.1.10
+  topgg-autoposter: 2.0.0
   trsozluk: 1.5.0
   twemoji-parser: 13.0.0
   weather-js: 2.0.0
@@ -593,6 +593,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8fULQjB0x4LzUSiSYG6ZtQl355sZjxbv8r9PPAuYHzS9sGiSHJQavNqK/nKnpDsVkU88/vRGcE7t3nMU0dEnVw==
+  /@jpbberry/typed-emitter/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-KN53f30wcy/P00tgXlkFG5IEFv5zEC3QArBHDLkUEzJu/tPtbJkZkUEBGJE3++pAIPRl2Vs6bsO9y3sHgF311w==
   /@mapbox/node-pre-gyp/1.0.5:
     dependencies:
       detect-libc: 1.0.3
@@ -5662,13 +5666,14 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
-  /topgg-autoposter/1.1.10:
+  /topgg-autoposter/2.0.0:
     dependencies:
+      '@jpbberry/typed-emitter': 1.0.1
       '@top-gg/sdk': 3.1.1
-      typescript: 4.3.2
+      typescript: 4.3.4
     dev: false
     resolution:
-      integrity: sha512-VdqHxr1MmxAwilow0PWlVW9fEhKcSqdnRRr+74bd/E4CycQ2eMr6DkrZhnQiFVh1jqr1+DFHxUdRwL/C7IdEHQ==
+      integrity: sha512-0p+nQFwonIDfc6H0B5A9DO+34WYJvjaAMV+aVh+7sG+ChIi2Etl+w6bFEXhI1ws7dnsmp26Jstpyb9lK/Sy0dw==
   /tough-cookie/2.5.0:
     dependencies:
       psl: 1.8.0
@@ -5780,13 +5785,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-  /typescript/4.3.2:
+  /typescript/4.3.4:
     dev: false
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-zZ4hShnmnoVnAHpVHWpTcxdv7dWP60S2FsydQLV8V5PbS3FifjWFFRiHSWpDJahly88PRyV5teTSLoq4eG7mKw==
+      integrity: sha512-uauPG7XZn9F/mo+7MrsRjyvbxFpzemRjKEZXS4AK83oP2KKOJPvb+9cO/gmnv8arWZvhnjVOXz7B49m1l0e9Ew==
   /unbox-primitive/1.0.1:
     dependencies:
       function-bind: 1.1.1
@@ -6235,7 +6240,7 @@ specifiers:
   simple-youtube-api: ^5.2.1
   speedtest-net: ^2.1.1
   steam-provider: ^0.3.2
-  topgg-autoposter: ^1.1.6
+  topgg-autoposter: ^2.0.0
   trsozluk: ^1.5.0
   twemoji-parser: ^13.0.0
   weather-js: ^2.0.0

@@ -34,7 +34,7 @@
     "speedtest-net": "^2.1.1",
     "simple-youtube-api": "^5.2.1",
     "steam-provider": "^0.3.2",
-    "topgg-autoposter": "^1.1.6",
+    "topgg-autoposter": "^2.0.0",
     "twemoji-parser": "^13.0.0",
     "weather-js": "^2.0.0",
     "ws": "^7.4.6",
