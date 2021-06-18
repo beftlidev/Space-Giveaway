@@ -73,7 +73,7 @@
     "discord-temp-channels": "^2.0.0"
   },
   "scripts": {
-    "start": "node shard.js"
+    "start": "node space-giveaway.js"
   },
   "engines": {
     "node": "12.x"

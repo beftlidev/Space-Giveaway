@@ -19,18 +19,6 @@ const { DiscordTogether } = require("discord-together");
 
 client.discordTogether = new DiscordTogether(client);
 
-const AutoPoster = require("topgg-autoposter");
-const ap = AutoPoster("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2NTIwNzI2ODQwODAzMzMyMiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjE0MzY5NTkwfQ.WC8doV3KEhoWAInJEI4sOPMAJ-nDzWMfJgp8Tb0jqsI", client);
-ap.on("posted", () => {
-  console.log("✨ Top.gg bilgiler gönderildi!");
-});
-
-const BFD = require("bfd-api");
-const bfd = new BFD(
-  "9e997ad5125d5f2d4dfdcd1ebf9322165fb610d142c8a9da9257f5a0565ac74cb3a91a722357120b5efdd90f30915b0e71113d66d47b3dbc953e131371f3aba4"
-);
-const info = bfd.hasVerified("765207268408033322");
-console.log(info);
 
 const path = require("path");
 
