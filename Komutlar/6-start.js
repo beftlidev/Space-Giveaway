@@ -61,13 +61,13 @@ module.exports.run = async (client, message, args) => {
       winnerCount: parseInt(args[1]),
       messages: {
         giveaway:
-          "<:SpaceGiveaway:798525686142468136> **Çekiliş Başladı** <:SpaceGiveaway:798525686142468136>",
+          ":tada: **Çekiliş Başladı** :tada:",
         giveawayEnded:
-          "<:SpaceGiveaway:798525686142468136> **Çekiliş Bitti** <:SpaceGiveaway:798525686142468136>",
+          ":tada: **Çekiliş Bitti** :tada:",
         timeRemaining: `\n\Kalan Süre: **{duration}**!\n\Çekilişi Yapan: ${
           message.author
         }`,
-        inviteToParticipate: "<a:bytcec:818712678146113567> Çekilişe katılmak için 🎉 tepkisine tıklayın!",
+        inviteToParticipate: "Çekilişe katılmak için 🎉 tepkisine tıklayın!",
         winMessage: "🎉 Tebrikler, {winners}! **{prize}** kazandın!",
         embedFooter: " Çekiliş",
         noWinner: `\Yeterli katılım olmadığı için çekiliş iptal edildi.\n\Çekilişi Yapan: ${message.author}`,
