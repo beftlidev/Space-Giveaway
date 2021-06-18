@@ -35,8 +35,9 @@ exports.run = async (client, message, args) => {
 
   .addField("<:Para:847799588462657536> Ekonomi Komutları", "Hmm zengin insanı değiştirir.") 
 
-  .addField("<:emoji_ab:848482971013873694> Emoji komutları", "Gel Emojilere bir göz atalım?") 
-
+  .addField("<:emoji_ab:848482971013873694> Emoji Komutları", "Gel Emojilere bir göz atalım?") 
+   
+  .addField(":neutral:846276939185520640> Bot list Komutları", "Bot list sistemi kuralımmı :3")
   .setFooter("Space Giveaway", client.user.displayAvatarURL())
 
     const embed2 = new Discord.MessageEmbed()
@@ -276,8 +277,27 @@ exports.run = async (client, message, args) => {
 > **g.emoji-bilgi** - Yazdığınız emoji hakkında bilgi verir. 
 > **g.emoji-ara** - Yazdığınız emoji isminde arama yapar ve bulduklarını atar. 
 `) 
+   
+   const embed13 = new Discord.MessageEmbed() 
+   .setColor("GREEN") 
 
-    var pages = [embed1, embed2, embed3, embed4, embed5, embed6, embed7, embed9, embed10, embed11, embed12]
+  .setAuthor(`Merhaba, ${message.author.username}!`, message.author.avatarURL())
+
+  .setTitle("<:neutral:846276939185520640> Bot List Komutları")
+
+  .setURL("https://top.gg/bot/765207268408033322")
+
+.setDescription(`> **g.bot-ekle <botid> <botprefix>** - Bot eklersiniz. 
+> **g.bot-onayla <botid>** - Bot onaylarsınız. 
+> **g.bot-reddet <botid>** - Bot reddedersiniz.
+> **g.botlist bot-ekle-kanal <kanal>** - Bot ekleme kanalı ayarlarsınız. 
+> **g.botlist bot-log-kanal <kanal>** - Bot log kanalı ayarlarsınız. 
+> **g.botlist onay-red-log-kanal <kanal>** - Bot onay red kanal ayarlarsınız. 
+> **g.botlist bot-yetkili-rol <rol>** - Bot yetkili rolü ayarlarsınız. 
+> **g.botlist sıfırla** - Bot list ayarlarını sıfırlarsınız. 
+`) 
+
+    var pages = [embed1, embed2, embed3, embed4, embed5, embed6, embed7, embed9, embed10, embed11, embed12, embed13]
 
     disbutpages.pages(client, message, pages, 300000, disbut, "red", "844468549417697350", "844468548079321089", "844468546930606100")
 

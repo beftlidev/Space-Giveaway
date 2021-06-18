@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
 
   if(!sebep) return message.inlineReply("<:codesty_cross:844468546930606100> Lütfen bir bot red sebebi gir!")
 
-  let botvaryok = db.fetch(`bot.id.${botid}`)
+  let botvaryok = db.fetch(`bot.id.${message.guild.id}.${botid}`)
 
   if(botid) {
 
