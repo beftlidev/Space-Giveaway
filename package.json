@@ -70,10 +70,11 @@
     "djs-tickets": "^5.0.0",
     "discord-buttons-react": "^0.0.3",
     "discord-embeds-pages-buttons": "^1.1.8",
-    "discord-temp-channels": "^2.0.0"
+    "discord-temp-channels": "^2.0.0",
+    "discaudio": "^1.0.27"
   },
   "scripts": {
-    "start": "node space-giveaway.js"
+    "start": "node shard.js"
   },
   "engines": {
     "node": "12.x"

@@ -11,7 +11,7 @@ var prefix = ayarlar.prefix;
 module.exports = client => {
 
     client.user.setStatus('idle') //bura izliyor felan Gördüm sonra beyin yandı bende ya :/
- client.user.setPresence({ activity: { type: "LISTENING", name: `g.yardım | Selamm UwU | g.davet`}, status: 'idle' })
+ client.user.setPresence({ activity: { type: "LISTENING", name: `g.yardım | Shard ID: [${client.shard.ids}/2] | g.davet`}, status: 'idle' })
 
    // client.user.setActivity(`🎁Greedy^ / 🚀!yardım/ 🌐!davet / 🇹🇷 Sunucu : ${client.guilds.cache.size}`);
 

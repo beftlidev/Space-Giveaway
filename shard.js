@@ -8,7 +8,7 @@ const ayarlar = require('./ayarlar.json');
 
 const captain = new Discord.ShardingManager('./space-giveaway.js', {
 
-    totalShards: 3,
+    totalShards: 2,
 
     token: (process.env.TOKEN)//sa kodır abler
 

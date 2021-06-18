@@ -48,7 +48,7 @@ Promise.all(promises)
 
                  .addField("<:codesty_join:844468549417697350> Bu Sunucunun Shard İd' si", client.shard.ids) 
 
-                 .addField("<:codesty_join:844468549417697350> Shard Sayısı", "3") 
+                 .addField("<:codesty_join:844468549417697350> Shard Sayısı", "2") 
 
                  .addField(`> <:codesty_support:844468556430704640> ${client.shard.ids} id' li Shard' ın bilgileri`, random)
 

@@ -13,6 +13,7 @@ dependencies:
   common-tags: 1.8.0
   croxydb: 0.0.7
   dblapi.js: 2.4.1
+  discaudio: 1.0.27
   discord-backup: 2.5.0
   discord-blackjack: 2.0.4
   discord-buttons: 3.2.1
@@ -1818,6 +1819,19 @@ packages:
       node: '>=0.3.1'
     resolution:
       integrity: sha512-A46qtFgd+g7pDZinpnwiRJtxbC1hpgf0uzP3iG89scHk0AUC7A1TGxf5OiiOUv/JMZR8GOt8hL900hV0bOy5xA==
+  /discaudio/1.0.27:
+    dependencies:
+      discord-buttons: 3.2.1
+      discord-embeds-pages-buttons: 1.1.8
+      discord.js: 12.5.3
+      ffmpeg-static: 4.3.0
+      node-fetch: 2.6.1
+      opusscript: 0.0.8
+      pretty-ms: 7.0.1
+      ytdl-core: 4.8.2
+    dev: false
+    resolution:
+      integrity: sha512-uIfRnwj7iF+wlv7YBN8xT8TWt9j/P/bjeGPWHEQtnNHSQfI3F8DbCACA+kZPZv9D3EixOhlglDVbPIbXjPX4Iw==
   /discord-backup/2.5.0:
     dependencies:
       discord.js: 12.5.3
@@ -4440,6 +4454,10 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-+IW9pACdk3XWmmTXG8m3upGUJst5XRGzxMRjXzAuJ1XnIFNvfhjjIuYkDvysnPQ7qzqVzLt78BCruntqRhWQbA==
+  /opusscript/0.0.8:
+    dev: false
+    resolution:
+      integrity: sha512-VSTi1aWFuCkRCVq+tx/BQ5q9fMnQ9pVZ3JU4UHKqTkf0ED3fKEPdr+gKAAl3IA2hj9rrP6iyq3hlcJq3HELtNQ==
   /os-homedir/1.0.2:
     dev: false
     engines:
@@ -4722,6 +4740,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
+  /pretty-ms/7.0.1:
+    dependencies:
+      parse-ms: 2.1.0
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q==
   /prism-media/1.2.9:
     dev: false
     peerDependencies:
@@ -6195,6 +6221,7 @@ specifiers:
   common-tags: ^1.8.0
   croxydb: ^0.0.7
   dblapi.js: ^2.4.1
+  discaudio: ^1.0.27
   discord-backup: ^2.5.0
   discord-blackjack: ^2.0.4
   discord-buttons: ^3.2.1
