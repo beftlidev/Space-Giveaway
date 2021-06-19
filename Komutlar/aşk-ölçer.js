@@ -54,9 +54,7 @@ const embed = new Discord.MessageEmbed()
 
 .setColor("PINK") 
 
-.setDescription(`${cevap}
-
-( <@${message.author.id}> ) - ( <@${user.author.id}> )`) 
+.setDescription(`${cevap}`) 
 
 .setTitle("Aşk Ölçer 2000")
 

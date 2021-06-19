@@ -200,6 +200,7 @@ exports.run = async (client, message, args) => {
 > **g.batslap** - Etiketlediğiniz kişiye batslap efekti katar.
 > **g.sunucu-bilgi** - Sunucu hakkında bilgi verir. 
 > **g.fake-mesaj [etiket] [mesaj]** - Etiketlediğiniz kişiye fake mesaj attırırsınız. 
+> **g.aşk-ölçer** - Etiketlediğiniz kişi ile aşkınızı ölçer. 
 `) 
 
    const embed9 = new Discord.MessageEmbed() 
