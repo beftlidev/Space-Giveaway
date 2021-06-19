@@ -69,8 +69,8 @@ exports.run = async (client, message, args) => {
 
   .setURL("https://top.gg/bot/765207268408033322")
 
-     .setDescription(`> **** - 
-> **** - 
+     .setDescription(`> **g.profil** - Profilinize bakarsınız. 
+> **g.profil-ayarla** - Profilinizi ayarlarsınız. 
 > **g.davet** - Botun davet linkini gönderir. 
 > **g.ping** - Botun pingini gösterir. 
 > **g.öneri** - Bot için öneri verirsiniz. 
