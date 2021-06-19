@@ -528,3 +528,222 @@ const discaudio = require("discaudio");
 
         })
 
+
+
+function extension(attachment) {
+
+  let imageLink = attachment.split('.');
+
+  let typeOfImage = imageLink[imageLink.length - 1];
+
+  let image = /(jpg|jpeg|png|gif)/gi.test(typeOfImage);
+
+  if (!image) return '';
+
+  return attachment;
+
+}
+
+client.on('messageReactionAdd', async (message, messageReaction, user) => {
+
+let kanal = db.fetch(`starboard_${message.guild.id}`);
+
+if(user.bot) return;
+
+const database = require('croxydb');
+
+if(messageReaction.emoji.name === '⭐') {
+
+/*if(messageReaction.count <= 1) return;*/
+
+let starboardChannel = client.channels.cache.get(kanal);// id gir
+
+if(!starboardChannel) return;
+
+if(messageReaction.message.content == null) return user.send('You added a reaction to an old message.');
+
+let emojiCheck;
+
+let color;
+
+if(messageReaction.count <= 7) {
+
+emojiCheck = '⭐';
+
+color = '#ffdf81';
+
+};
+
+if(messageReaction.count >= 8) {
+
+emojiCheck = '🌟';
+
+color = '#ffd65e';
+
+};
+
+if(messageReaction.count >= 14) {
+
+emojiCheck = '✨';
+
+color = '#ffc827';
+
+};
+
+if(messageReaction.count >= 24) {
+
+emojiCheck = '💫';
+
+color = '#ffc20c';
+
+};
+
+if(messageReaction.count >= 32) {
+
+emojiCheck = '☄️';
+
+color = '#ffc20c';
+
+};
+
+const embed = new Discord.MessageEmbed()
+
+.setDescription(messageReaction.message.content)
+
+.setFooter('ID: '+messageReaction.message.id)
+
+.setTimestamp()
+
+.setColor(color)
+
+.setAuthor(messageReaction.message.author.tag, messageReaction.message.author.displayAvatarURL({ dynamic: true }));
+
+let image = messageReaction.message.attachments.size > 0 ? await extension(messageReaction.message.attachments.array()[0].url) : '';
+
+if(image) embed.setImage(image);
+
+const gönderildi = await database.fetch(messageReaction.message.id);
+
+if(gönderildi) {
+
+const messageFetch = await starboardChannel.messages.fetch(gönderildi);
+
+messageFetch.edit(`${emojiCheck || '⭐'} **${messageReaction.count}** | ${messageReaction.message.channel}`, embed)
+
+} else {
+
+starboardChannel.send(`${emojiCheck || '⭐'} **${messageReaction.count}** | ${messageReaction.message.channel}`, embed).then(asd => {
+
+database.set(messageReaction.message.id, asd.id);
+
+asd.react('⭐')
+
+});
+
+};
+
+};
+
+});
+
+client.on('messageReactionRemove', async (message, messageReaction, user) => {
+
+let kanal = db.fetch(`starboard_${message.guild.id}`);
+
+if(user.bot) return;
+
+const database = require('croxydb');
+
+if(messageReaction.emoji.name === '⭐') {
+
+let starboardChannel = client.channels.cache.get(kanal);
+
+if(!starboardChannel) return;
+
+if(messageReaction.message.content == null) return user.send('You added a reaction to an old message.');
+
+if(messageReaction.count == 0) {
+
+const ms = await database.fetch(messageReaction.message.id);
+
+const öd = await starboardChannel.messages.fetch(ms);
+
+öd.delete();
+
+database.delete(messageReaction.message.id);
+
+};
+
+let emojiCheck;
+
+let color;
+
+if(messageReaction.count <= 7) {
+
+emojiCheck = '⭐';
+
+color = '#ffdf81';
+
+};
+
+if(messageReaction.count >= 8) {
+
+emojiCheck = '🌟';
+
+color = '#ffd65e';
+
+};
+
+if(messageReaction.count >= 14) {
+
+emojiCheck = '✨';
+
+color = '#ffc827';
+
+};
+
+if(messageReaction.count >= 24) {
+
+emojiCheck = '💫';
+
+color = '#ffc20c';
+
+};
+
+if(messageReaction.count >= 32) {
+
+emojiCheck = '☄️';
+
+color = '#ffc20c';
+
+};
+
+const embed = new Discord.MessageEmbed()
+
+.setDescription(messageReaction.message.content)
+
+.setFooter('ID: '+messageReaction.message.id)
+
+.setTimestamp()
+
+.setColor(color)
+
+.setAuthor(messageReaction.message.author.tag, messageReaction.message.author.displayAvatarURL({ dynamic: true }));
+
+let image = messageReaction.message.attachments.size > 0 ? await extension(messageReaction.message.attachments.array()[0].url) : '';
+
+if(image) embed.setImage(image);
+
+const gönderildi = await database.fetch(messageReaction.message.id);
+
+if(gönderildi) {
+
+const messageFetch = await starboardChannel.messages.fetch(gönderildi);
+
+messageFetch.edit(`${emojiCheck || '⭐'} **${messageReaction.count}** | ${messageReaction.message.channel}`, embed)
+
+};
+
+};
+
+});
