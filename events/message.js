@@ -64,6 +64,7 @@ module.exports = async (client, message) => {
     return message.channel.send(embed) 
      }
     } 
+      
     talkedRecently.add(message.author.id);
 
       setTimeout(() => {
