@@ -1,6 +1,9 @@
 const Discord = require("discord.js")
+
 const { MessageButton } = require("discord-buttons") 
+
 const db = require("croxydb") 
+
 exports.run = async (client, message, args) => {
 
 let kullanıcı = message.mentions.users.first() 
@@ -22,9 +25,13 @@ let youtube = db.fetch(`youtube_${message.author.id}`)
 let github = db.fetch(`github_${message.author.id}`) 
 
 let xboxb = new MessageButton() 
+
 .setLabel(`${xbox || "?"}`)
+
 .setID("xboxprofil")
+
 .setEmoji("855659097311805460")
+
 .setStyle("green")
 
 let youtubeb = new MessageButton() 
@@ -34,7 +41,6 @@ let youtubeb = new MessageButton()
 .setURL(`${youtube || "https://youtube.com"}`)
 
 .setStyle("url")
-
 
 let githubb = new MessageButton() 
 
@@ -48,17 +54,19 @@ const embed1 = new Discord.MessageEmbed()
 
 .setTitle("Profil") 
 
-.addField(`İsim:`, message.author.username) 
+.addField(`İsim`, message.author.username) 
 
-.addField(`Yaş:`, `${yas || "Ayarlanmamış"}`) 
+.addField(`Yaş`, `${yas || "Ayarlanmamış"}`) 
 
-.addField(`Açıklama:`, `${aciklama || "Ben çok güzel bir kelebeğim"}`) 
+.addField(`Açıklama`, `${aciklama || "Ben çok güzel bir kelebeğim"}`) 
 
-.addField(`Durum:`, `${durume || ""} ${durum || "Ben çok güzel bir çiçeğim"}`)
+.addField(`Durum`, `${durume || ""} ${durum || "Ben çok güzel bir çiçeğim"}`)
 
 .setImage(`${banner || ""}`)
 
 .setColor("GREEN") 
+
+.setThumbnail(message.author.avatarURL({ dynamic: true, size: 2048 })) 
 
 message.channel.send({
 
@@ -69,7 +77,6 @@ buttons: [xboxb, youtubeb, githubb]
 }) 
 
 } 
-
 
 exports.conf = {
 
