@@ -24,21 +24,27 @@ let youtube = db.fetch(`youtube_${message.author.id}`)
 
 let github = db.fetch(`github_${message.author.id}`) 
 
-let pre = db.fetch(`pre_${message.author.id}`) 
-
-let bug = db.fetch(`bug_${message.author.id}`) 
-
 let owner = db.fetch(`owner_${message.author.id}`) 
-
-let bug2 = db.fetch(`bug2_${message.author.id}`) 
-
-let destekci = db.fetch(`destekci_${message.author.id}`) 
 
 let yetkili = db.fetch(`yetkili_${message.author.id}`) 
 
+let mod = db.fetch(`mod_${message.author.id}`)
+
 let dev = db.fetch(`dev_${message.author.id}`) 
 
+let early = db.fetch(`early_${message.author.id}`)
+
+let pre = db.fetch(`pre_${message.author.id}`) 
+
 let gold = db.fetch(`gold_${message.author.id}`) 
+
+let destekci = db.fetch(`destekci_${message.author.id}`) 
+
+let bug = db.fetch(`bug_${message.author.id}`) 
+
+let bug2 = db.fetch(`bug2_${message.author.id}`) 
+
+let onayli = db.fetch(`onayli_${message.author.id}`) 
 
 let xboxb = new MessageButton() 
 
@@ -74,7 +80,7 @@ const embed1 = new Discord.MessageEmbed()
 
 .addField(`Yaş`, `${yas || "Ayarlanmamış"}`) 
 
-.addField(`Rozetlerin`, `${pre || "<:minehert:763281229076103179>"} ${bug || ""} ${owner || ""} ${bug2 || ""} ${destekci || ""} ${yetkili || ""} ${dev || ""} ${gold || ""}`) 
+.addField(`Rozetlerin`, `${owner || ""} ${yetkili || ""} ${mod || ""} ${dev || ""} ${early || ""} ${pre || "<:codesty_member:844468558523924542>"} ${gold || ""} ${destekci || ""} ${bug || ""} ${bug2 || ""} ${onayli || ""}`) 
 
 .addField(`Açıklama`, `${aciklama || "Ben çok güzel bir kelebeğim"}`) 
 
@@ -106,4 +112,4 @@ exports.help = {
 
 name: "profil" 
 
-} 
+}  
