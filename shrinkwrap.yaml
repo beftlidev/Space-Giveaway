@@ -26,6 +26,7 @@ dependencies:
   discord-temp-channels: 2.0.0
   discord-together: 1.1.14
   discord-tr-akinator: 1.0.1
+  discord-xp: 1.1.14
   discord.js: 12.5.3
   discord.js-akinator: 2.0.4
   djs-tickets: 5.0.0
@@ -1942,6 +1943,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-mV7jRTYCWuUyWvkNWApR/wsJ/TWW3FfsES2VFCFKUD/l/qkBf2VSNPHVwoEH07B8mejvq2WHGxmJ/HEd2cz+Eg==
+  /discord-xp/1.1.14:
+    dependencies:
+      mongoose: /mongoose/5.12.14/mongoose@5.12.14
+    dev: false
+    resolution:
+      integrity: sha512-SYZTi/xVn0sJJn7wW49OekdTIdi3d4/ftII4Yl1wteOfa49/0uEpCRqf6I5KZffuz1kCCD5p8EVAIg291rzyvg==
   /discord-ytdl-core/5.0.3:
     dependencies:
       prism-media: 1.2.9
@@ -6313,6 +6320,7 @@ specifiers:
   discord-temp-channels: ^2.0.0
   discord-together: ^1.1.14
   discord-tr-akinator: ^1.0.1
+  discord-xp: ^1.1.14
   discord.js: ^12.5.3
   discord.js-akinator: ^2.0.4
   djs-tickets: ^5.0.0

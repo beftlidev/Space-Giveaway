@@ -541,8 +541,7 @@ const discaudio = require("discaudio");
 
         })
 
-const Levels = require('discord-xp');
-
+    const Levels = require('discord-xp');
 
 
 Levels.setURL(process.env.mongo);
