@@ -195,7 +195,7 @@ exports.run = async (client, message, args) => {
 
 exports.help = {
 
-name: "deneme" 
+name: "eval2" 
 
 } 
 
