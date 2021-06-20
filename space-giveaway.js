@@ -150,6 +150,19 @@ client.on("message", async (msg, member, guild) => {
 });
 
 client.on("message", async (msg, member, guild) => {
+let açıkmı = await db.fetch(`gold_${msg.author.id}`)
+  if(açıkmı) {
+    if (msg.content.toLowerCase() === "sa") {
+      const embed = new Discord.MessageEmbed() 
+      .setTitle("Bir gold üye belirdi!")
+      .setDescription("Aleyküm Selam Hoşgeldin Gold Üye! <a:nrp:821434879539281931>") 
+      .setColor("GOLD") 
+      msg.inlineReply(embed);
+    }
+  }
+});
+
+client.on("message", async (msg, member, guild) => {
   let i = await db.fetch(`saase_${msg.guild.id}`);
   if (i === "açık") {
     if (msg.content.toLowerCase() === "sa") {
