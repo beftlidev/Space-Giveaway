@@ -569,3 +569,18 @@ client.on('message', async message => {
     }
 
 })
+
+const Nuggies = require('nuggies');
+client.on('clickButton', button => {
+
+    Nuggies.giveaways.buttonclick(client, button);
+
+});
+client.on('ready', () => {
+
+    console.log(`${client.user.tag} is online.`)
+
+    Nuggies.giveaways.startAgain(client);
+
+});
+Nuggies.giveaways.connect(
