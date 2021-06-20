@@ -100,7 +100,7 @@ const filter = m => m.author.id === message.author.id;
 
             giveaway.requirements = { enabled: msg.content == 'yes' ? true : false };
 
-            return message.channel.send(`Bu doğru mu?\n\`\`\`Ödül: ${giveaway.prize}\nKazanan(lar): ${giveaway.winners}\nSüre: ${ms(giveaway.time)}\nDüzenleyen: ${message.guild.members.cache.get(giveaway.host).user.username}\Gereklilik: ${giveaway.requirements.enabled ? 'Yes' : 'No'}\n\`\`\`Yanıtla \`yes\` or \`no\`!`);
+            return message.channel.send(`Bu doğru mu?\n\`\`\`Ödül: ${giveaway.prize}\nKazanan(lar): ${giveaway.winners}\nSüre: ${ms(giveaway.time)}\nDüzenleyen: ${message.guild.members.cache.get(giveaway.host).user.username}\nGereklilik: ${giveaway.requirements.enabled ? 'Yes' : 'No'}\n\`\`\`Yanıtla \`yes\` or \`no\`!`);
 
         }
 
@@ -128,7 +128,7 @@ const filter = m => m.author.id === message.author.id;
 
         if (reason == 'done' && giveaway.requirements.enabled) {
 
-            message.channel.send('Rol gereksinimlerini kullanabilirsiniz: `role=ID`!(without spaces) Gereksinimleri koymayı bitirdikten sonra `bitti` deyin');
+            message.channel.send('Rol gereksinimlerini kullanabilirsiniz: `role=ROL ID`! Gereksinimleri koymayı bitirdikten sonra `done` deyin');
 
             const rcollector = message.channel.createMessageCollector(filter, { time: 60 * 1000, max: 1000 });
 

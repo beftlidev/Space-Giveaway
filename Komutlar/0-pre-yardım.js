@@ -37,8 +37,10 @@ const e2 = new Discord.MessageEmbed()
 
 .setURL("https://top.gg/bot/765207268408033322")
 
-.setDescription(`Yakında!
-
+.setDescription(`> **g.pre-çekiliş-başlat** - Çekiliş Başlatırsınız. 
+> **g.pre-çekiliş-oluştur** - Çekiliş oluşturursunuz. ( soru ile ) 
+> **g.pre-çekiliş-yeniden-çek** - Çekiliş yeniden çekersiniz. 
+> **g.pre-çekiliş-bitir** - Çekiliş bitirirsiniz.
 `) 
 
 const e3 = new Discord.MessageEmbed() 
