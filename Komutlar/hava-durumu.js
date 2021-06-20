@@ -8,7 +8,7 @@ exports.run = async function(client, message, args) {
 
    let şehir = args[0]
 
-   if (!şehir) return message.channel.send("Lütfen bir yer girin.")
+   if (!şehir) return message.channel.send("<:carpi:855750448711467058> Lütfen bir yer girin.")
 
   
 
@@ -17,7 +17,7 @@ exports.run = async function(client, message, args) {
      .setTitle(`**${şehir.toLocaleUpperCase()} Hava durumu**`)
 
      .setImage(`https://ryukjs.com/api/weather_image?city=${şehir}`) 
-
+.setColor("BLURPLE") 
     message.channel.send(embed)
 
 

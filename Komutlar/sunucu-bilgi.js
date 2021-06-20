@@ -25,9 +25,12 @@ const embed = new Discord.MessageEmbed()
 .addField("<:codesty_join:844468549417697350> Doğrulama düzeyi", message.guild.verificationLevel) 
 
 .addField("<:codesty_join:844468549417697350> Kurallar kanalı", `${message.guild.rulesChannelID || "Yok"}`) 
-
+.addField("<:codesty_join:844468549417697350> Toplam kanal", message.guild.channels.cache.size) 
+.addField("<:codesty_join:844468549417697350> Toplam kategori", message.guild.channels.cache.filter(a => a.type == "category").size) 
+.addField("<:codesty_join:844468549417697350> Toplam Rol", message.guild.roles.cache.size) 
 .addField("<:codesty_join:844468549417697350> Sunucu kurucu", `<@${message.guild.ownerID}>`) 
-
+.addField("<:codesty_join:844468549417697350> Toplam boost", message.guild.premiumSubscriptionCount) 
+.addField("<:codesty_join:844468549417697350> Boost level", message.guild.premiumTier) 
 .addField("<:codesty_join:844468549417697350> Sunucu özel url", `${message.guild.vanityURLCode || "Yok"}`) 
 
 .setThumbnail(`https://cdn.discordapp.com/icons/${message.guild.id}/${message.guild.icon}.webp`) 
