@@ -583,4 +583,4 @@ client.on('ready', () => {
     Nuggies.giveaways.startAgain(client);
 
 });
-Nuggies.giveaways.connect(
+Nuggies.giveaways.connect("mongodb+srv://iugur:ub1234512345@cluster0.wyidf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority") 
