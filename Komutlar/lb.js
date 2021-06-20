@@ -10,7 +10,7 @@ if (rawLeaderboard.length < 1) return message.inlineReply("<:carpi:8557504487114
 
 const leaderboard = await Levels.computeLeaderboard(client, rawLeaderboard, true); // We process the leaderboard.
 
-const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nLevel: ${e.level}\nXP: ${e.xp.toLocaleString()}`); // We map the outputs.
+const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\n<:rank:856145161888989215> Level: ${e.level}\n<:level:856145180117172224> XP: ${e.xp.toLocaleString()}`); // We map the outputs.
 
 const embed = new Discord.MessageEmbed() 
 

@@ -564,7 +564,7 @@ client.on('message', async message => {
 
         const user = await Levels.fetch(message.author.id, message.guild.id);
 
-        message.channel.send(`Tebrikler ${message.author}, ${user.level} Leveline atladın!`);
+        message.channel.send(`Tebrikler ${message.author}!, ${user.level} Leveline atladın! :tada`);
 
     }
 
