@@ -1,22 +1,28 @@
 const Nuggies = require('nuggies');
-
+const Discord = require("discord.js") 
 const ms = require('ms')
+
+const data = require("croxydb") 
 
 module.exports.run = async (client, message, args) => {
 
+let açıkmı = await data.fetch(`pre_${message.author.id}`)
+
+  if(açıkmı) {
+
 	let requirements;	let prize;
 
-	if (!message.member.hasPermission('MANAGE_GUILD')) return message.reply('You are not allowed to use this command!');
+	if (!message.member.hasPermission('MANAGE_GUILD')) return message.reply('<:carpi:855750448711467058> Bu Komudu kullanmaya yetkin yok!');
 
-	if (!args[1]) return message.reply('Please provide the options in the format of `{time} {winners} {req | optional} {prize}`');
+	if (!args[1]) return message.reply('Lütfen argümantları `{süre} {kazanacak sayısı} {ödül}` böyle yapın');
 
-	if (isNaN(parseInt((args[1])))) return message.reply('Please provide a valid number of winners', { allowedMentions: { repliedUser: false } });
+	if (isNaN(parseInt((args[1])))) return message.reply('Lütfen geçerli sayıda kazanan sağlayın', { allowedMentions: { repliedUser: false } });
 
-	if (!args[1]) return message.reply('Please provide the time of the giveaway!', { allowedMentions: { repliedUser: false } });
+	if (!args[1]) return message.reply('Lütfen çekilişin zamanını sağlayın! ', { allowedMentions: { repliedUser: false } });
 
-	if (!ms(args[0])) return message.reply('Please provide a valid time! Example: `1m 1w`', { allowedMentions: { repliedUser: false } });
+	if (!ms(args[0])) return message.reply('Lütfen geçerli bir süre sağlayın! örnek: `1m 1w`', { allowedMentions: { repliedUser: false } });
 
-	if (!args.slice(2).join(' ')) return message.reply('Please provide the prize!', { allowedMentions: { repliedUser: false } });
+	if (!args.slice(2).join(' ')) return message.reply('Lütfen ödülü girin!', { allowedMentions: { repliedUser: false } });
 
 	const host = message.author.id;
 
@@ -61,12 +67,20 @@ module.exports.run = async (client, message, args) => {
 		channel: message.channel.id,
 
 	});
+} else { return message.channel.send(new Discord.MessageEmbed()
 
+ .setDescription(`Bu komut premiumlulara özel!
+Premium almak için [Destek sunucumuzu](https://discord.gg/KZfAEjrPUF) ziyaret et!`)
+
+.setTimestamp()
+
+)
+
+} 
 }
 
 exports.help = {
 
-	name: 'pre-start',
+	name: 'pre-çekiliş-başlat'
 
-	
 }
