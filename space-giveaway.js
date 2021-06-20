@@ -541,4 +541,32 @@ const discaudio = require("discaudio");
 
         })
 
+const Levels = require('discord-xp');
 
+
+
+Levels.setURL(process.env.mongo);
+
+
+
+client.on('message', async message => {
+
+    if (!message.guild) return;
+
+    if (message.author.bot) return;
+
+
+
+    const randomXp = Math.floor(Math.random() * 9) + 1;
+
+    const hasLeveledUp = await Levels.appendXp(message.author.id, message.guild.id, randomXp);
+
+    if (hasLeveledUp) {
+
+        const user = await Levels.fetch(message.author.id, message.guild.id);
+
+        message.channel.send(`Tebrikler ${message.author}, ${user.level} Leveline atladın!`);
+
+    }
+
+})

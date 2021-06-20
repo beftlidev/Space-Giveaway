@@ -73,7 +73,8 @@
     "discord-temp-channels": "^2.0.0",
     "discaudio": "^1.0.27",
     "nuggies": "^1.0.5",
-    "mongodb": "^3.6.9"
+    "mongodb": "^3.6.9",
+    "discord-xp": "^1.1.14"
   },
   "scripts": {
     "start": "node shard.js"
