@@ -1,5 +1,4 @@
-const Discord = require("discord.js")
-
+const Discord = require("discord.js") 
 const disbutpages = require("discord-embeds-pages-buttons")
 
 const disbut = require("discord-buttons") 
