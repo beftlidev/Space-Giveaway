@@ -544,7 +544,7 @@ const discaudio = require("discaudio");
     const Levels = require('discord-xp');
 
 
-Levels.setURL(process.env.mongo);
+Levels.setURL('mongodb+srv://iugur:ub1234512345@cluster0.wyidf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 
 
 
