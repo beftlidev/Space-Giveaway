@@ -546,7 +546,7 @@ const discaudio = require("discaudio");
     const Levels = require('discord-xp');
 
 
-Levels.setURL('mongodb+srv://iugur:ub1234512345@cluster0.wyidf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+Levels.setURL('');
 
 
 
@@ -585,4 +585,4 @@ client.on('ready', () => {
     Nuggies.giveaways.startAgain(client);
 
 });
-Nuggies.giveaways.connect("mongodb+srv://iugur:ub1234512345@cluster0.wyidf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority") 
+Nuggies.giveaways.connect("") 
