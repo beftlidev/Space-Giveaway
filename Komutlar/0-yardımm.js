@@ -38,6 +38,7 @@ exports.run = async (client, message, args) => {
   .addField("<:emoji_ab:848482971013873694> Emoji Komutları", "Gel Emojilere bir göz atalım?") 
    
   .addField("<:neutral:846276939185520640> Bot list Komutları", "Bot list sistemi kuralımmı :3")
+   .addField("<:aktivite:856408358562299904> Level Komutları <:beta:856408499025477632>", "Oww Level kasmaya ne dersin?.") 
   .setFooter("Space Giveaway", client.user.displayAvatarURL())
 
     const embed2 = new Discord.MessageEmbed()
@@ -296,8 +297,19 @@ exports.run = async (client, message, args) => {
 > **g.botlist bot-yetkili-rol <rol>** - Bot yetkili rolü ayarlarsınız. 
 > **g.botlist sıfırla** - Bot list ayarlarını sıfırlarsınız. 
 `) 
+   const embed14 = new Discord.MessageEmbed() 
+   .setColor("GREEN") 
 
-    var pages = [embed1, embed2, embed3, embed4, embed5, embed6, embed7, embed9, embed10, embed11, embed12, embed13]
+  .setAuthor(`Merhaba, ${message.author.username}!`, message.author.avatarURL())
+
+  .setTitle("<:aktivite:856408358562299904> Level Komutları <:beta:856408499025477632>")
+
+  .setURL("https://top.gg/bot/765207268408033322")
+
+.setDescription(`> **g.rank** - Leveline bakarsın. 
+> **g.leader-board** - En fazla leveli olanları gösterir. 
+`) 
+    var pages = [embed1, embed2, embed3, embed4, embed5, embed6, embed7, embed9, embed10, embed11, embed12, embed13, embed14]
 
     disbutpages.pages(client, message, pages, 300000, disbut, "red", "844468549417697350", "844468548079321089", "844468546930606100")
 
