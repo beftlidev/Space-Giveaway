@@ -48,7 +48,7 @@ dependencies:
   node-fetch: 2.6.1
   node-superfetch: 0.1.11
   npm: 7.12.0
-  nuggies: 1.0.6
+  nuggies: 1.0.8
   parse-ms: 2.1.0
   path: 0.12.7
   pet-pet-gif: 1.0.8
@@ -4440,7 +4440,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-i4sc/Kj8htBrAiH1viZ0TgU8Y5XqCaV/FziYK6TBczxmeKm3AEFWqqF3195yKudrarqy7Zu80Ra5dobFjn9X/Q==
-  /nuggies/1.0.6:
+  /nuggies/1.0.8:
     dependencies:
       discord-buttons: 3.2.1
       discord.js: 12.5.3
@@ -4448,7 +4448,7 @@ packages:
       ms: 2.1.3
     dev: false
     resolution:
-      integrity: sha512-rnJszsakrPNSiG/zufprfD/lShlhILpxqLI/pCNyh2ODp6ejpTnzrOh2iAIUliINMIWZ3oiAcYgNaa78+si5dw==
+      integrity: sha512-AhbPcJV6Yv63OHqASAhKH5AB+zKjvYngWa4XK67WDtuiWLcKgHh/KBF0vaF8gWrmWy1TLXf/y9+6jCNpzdxi8w==
   /number-is-nan/1.0.1:
     dev: false
     engines:
@@ -6364,7 +6364,7 @@ specifiers:
   node-fetch: ^2.6.1
   node-superfetch: ^0.1.11
   npm: ^7.12.0
-  nuggies: ^1.0.6
+  nuggies: ^1.0.8
   parse-ms: ^2.1.0
   path: ^0.12.7
   pet-pet-gif: ^1.0.8

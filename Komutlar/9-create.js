@@ -20,7 +20,7 @@ const filter = m => m.author.id === message.author.id;
 
     let step = 0;
 
-    message.channel.send('Ödül nedir?');
+    message.channel.send('<:codesty_support:844468556430704640> Ödül nedir?');
 
     collector.on('collect', async (msg) => {
 
@@ -32,7 +32,7 @@ const filter = m => m.author.id === message.author.id;
 
             const prize = msg.content;
 
-            message.channel.send(`:tada: Ödül. **${prize}**! \nHangi kanalda başlatmak istiyorsunuz?`, { allowedMentions: { roles: [], users: [], parse: [] } });
+            message.channel.send(`:tada: Ödül. **${prize}**! \n<:codesty_support:844468556430704640> Hangi kanalda başlatmak istiyorsunuz?`, { allowedMentions: { roles: [], users: [], parse: [] } });
 
             giveaway.prize = prize;
 
@@ -46,7 +46,7 @@ const filter = m => m.author.id === message.author.id;
 
             giveaway.channel = channel.id;
 
-            message.channel.send(`:tada: Kanal <#${channel.id}>! \nKaç kazanan istiyorsun?`);
+            message.channel.send(`:tada: Kanal <#${channel.id}>! \n<:codesty_support:844468556430704640> Kaç kazanan istiyorsun?`);
 
         }
 
@@ -66,7 +66,7 @@ const filter = m => m.author.id === message.author.id;
 
             giveaway.winners = parseInt(winners);
 
-            message.channel.send(`:tada: ${winners} kazananlar bu çekiliş için seçilecektir! \nNe kadar zaman istiyorsun?`);
+            message.channel.send(`:tada: ${winners} kazananlar bu çekiliş için seçilecektir! \n<:codesty_support:844468556430704640> Ne kadar zaman istiyorsun?`);
 
         }
 
@@ -80,7 +80,7 @@ const filter = m => m.author.id === message.author.id;
 
             if (ms(giveaway.time) > ms('14d')) return collector.stop('HIGH_TIME');
 
-            message.channel.send(`:tada: Saat şimdi ${time}! \nÇekilişi kim düzenliyor?`);
+            message.channel.send(`:tada: Saat şimdi ${time}! \n<:codesty_support:844468556430704640> Çekilişi kim düzenliyor?`);
 
         }
 
@@ -90,7 +90,7 @@ const filter = m => m.author.id === message.author.id;
 
             giveaway.host = host.id;
 
-            message.channel.send(`:tada: Çekiliş düzenleyen ${host}! \nŞimdi hediye için herhangi bir şart istiyor musunuz? \`yes\`, \`no\` `);
+            message.channel.send(`:tada: Çekiliş düzenleyen ${host}! \n<:codesty_support:844468556430704640> Şimdi hediye için herhangi bir şart istiyor musunuz? \`yes\`, \`no\` `);
 
         }
 
@@ -100,7 +100,7 @@ const filter = m => m.author.id === message.author.id;
 
             giveaway.requirements = { enabled: msg.content == 'yes' ? true : false };
 
-            return message.channel.send(`Bu doğru mu?\n\`\`\`Ödül: ${giveaway.prize}\nKazanan(lar): ${giveaway.winners}\nSüre: ${ms(giveaway.time)}\nDüzenleyen: ${message.guild.members.cache.get(giveaway.host).user.username}\Şart: ${giveaway.requirements.enabled ? 'Yes' : 'No'}\n\`\`\`Yanıtla \`yes\` veya \`no\`!`);
+            return message.channel.send(`<:codesty_support:844468556430704640> Bu doğru mu?\n<:codesty_join:844468549417697350> \`\`\`Ödül: ${giveaway.prize}\`\`\`\n<:codesty_join:844468549417697350> \`\`\`Kazanan(lar): ${giveaway.winners}\`\`\`\n<:codesty_join:844468549417697350> \`\`\`Süre: ${ms(giveaway.time)}\`\`\`\n<:codesty_join:844468549417697350> \`\`\`Düzenleyen: ${message.guild.members.cache.get(giveaway.host).user.username}\`\`\`\n<:codesty_join:844468549417697350> \`\`\`Şart: ${giveaway.requirements.enabled ? 'Yes' : 'No'}\`\`\`\n<:codesty_support:844468556430704640> Yanıtla \`yes\` veya \`no\`!`);
 
         }
 
@@ -128,7 +128,7 @@ const filter = m => m.author.id === message.author.id;
 
         if (reason == 'done' && giveaway.requirements.enabled) {
 
-            message.channel.send('Rol gereksinimlerini kullanabilirsiniz: `role=ROL ID` Örnek: `role=xxxxxxxxxx`! Gereksinimleri koymayı bitirdikten sonra `done` yazın');
+            message.channel.send('<:codesty_support:844468556430704640> Rol gereksinimlerini kullanabilirsiniz: `role=ROL ID` Örnek: `role=xxxxxxxxxx`! Gereksinimleri koymayı bitirdikten sonra `done` yazın');
 
             const rcollector = message.channel.createMessageCollector(filter, { time: 60 * 1000, max: 1000 });
 
