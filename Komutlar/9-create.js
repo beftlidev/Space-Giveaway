@@ -32,7 +32,7 @@ const filter = m => m.author.id === message.author.id;
 
             const prize = msg.content;
 
-            message.channel.send(`:tada: Ödül. **${prize}**! Hangi kanalda başlatmak istiyorsunuz?`, { allowedMentions: { roles: [], users: [], parse: [] } });
+            message.channel.send(`:tada: Ödül. **${prize}**! \nHangi kanalda başlatmak istiyorsunuz?`, { allowedMentions: { roles: [], users: [], parse: [] } });
 
             giveaway.prize = prize;
 
@@ -46,7 +46,7 @@ const filter = m => m.author.id === message.author.id;
 
             giveaway.channel = channel.id;
 
-            message.channel.send(`:tada: Kanal <#${channel.id}>! Kaç kazanan istiyorsun?`);
+            message.channel.send(`:tada: Kanal <#${channel.id}>! \nKaç kazanan istiyorsun?`);
 
         }
 
@@ -66,7 +66,7 @@ const filter = m => m.author.id === message.author.id;
 
             giveaway.winners = parseInt(winners);
 
-            message.channel.send(`:tada: ${winners} kazananlar bu çekiliş için seçilecektir! Ne kadar zaman istiyorsun?`);
+            message.channel.send(`:tada: ${winners} kazananlar bu çekiliş için seçilecektir! \nNe kadar zaman istiyorsun?`);
 
         }
 
@@ -80,7 +80,7 @@ const filter = m => m.author.id === message.author.id;
 
             if (ms(giveaway.time) > ms('14d')) return collector.stop('HIGH_TIME');
 
-            message.channel.send(`:tada: Saat şimdi ${time}! Çekilişe kim düzenliyor?`);
+            message.channel.send(`:tada: Saat şimdi ${time}! \nÇekilişi kim düzenliyor?`);
 
         }
 
@@ -90,7 +90,7 @@ const filter = m => m.author.id === message.author.id;
 
             giveaway.host = host.id;
 
-            message.channel.send(`:tada: Çekiliş düzenleyen ${host}! Şimdi hediye için herhangi bir gereklilik istiyor musunuz?`);
+            message.channel.send(`:tada: Çekiliş düzenleyen ${host}! \nŞimdi hediye için herhangi bir şart istiyor musunuz? \`yes\`, \`no\` `);
 
         }
 
@@ -100,7 +100,7 @@ const filter = m => m.author.id === message.author.id;
 
             giveaway.requirements = { enabled: msg.content == 'yes' ? true : false };
 
-            return message.channel.send(`Bu doğru mu?\n\`\`\`Ödül: ${giveaway.prize}\nKazanan(lar): ${giveaway.winners}\nSüre: ${ms(giveaway.time)}\nDüzenleyen: ${message.guild.members.cache.get(giveaway.host).user.username}\nGereklilik: ${giveaway.requirements.enabled ? 'Yes' : 'No'}\n\`\`\`Yanıtla \`yes\` or \`no\`!`);
+            return message.channel.send(`Bu doğru mu?\n\`\`\`Ödül: ${giveaway.prize}\nKazanan(lar): ${giveaway.winners}\nSüre: ${ms(giveaway.time)}\nDüzenleyen: ${message.guild.members.cache.get(giveaway.host).user.username}\Şart: ${giveaway.requirements.enabled ? 'Yes' : 'No'}\n\`\`\`Yanıtla \`yes\` veya \`no\`!`);
 
         }
 
@@ -118,17 +118,17 @@ const filter = m => m.author.id === message.author.id;
 
     collector.on('end', async (msgs, reason) => {
 
-        if (reason == 'time') return message.channel.send('Zamanında cevap vermedin!');
+        if (reason == 'time') return message.channel.send('<:carpi:855750448711467058> Zamanında cevap vermedin!');
 
-        if (reason == 'error') return message.channel.send('Geçerli bir seçenek sunmadınız!');
+        if (reason == 'error') return message.channel.send('<:carpi:855750448711467058> Geçerli bir seçenek sunmadınız!');
 
-        if (reason == 'cancel') return message.channel.send('Yanlış bilgi nedeniyle iptal edilen hediye kurulumu!');
+        if (reason == 'cancel') return message.channel.send('<:carpi:855750448711467058> Yanlış bilgi nedeniyle iptal edilen hediye kurulumu!');
 
-        if (reason == 'HIGH_TIME') return message.channel.send('Süre 14 günden fazla olamaz!');
+        if (reason == 'HIGH_TIME') return message.channel.send('<:carpi:855750448711467058> Süre 14 günden fazla olamaz!');
 
         if (reason == 'done' && giveaway.requirements.enabled) {
 
-            message.channel.send('Rol gereksinimlerini kullanabilirsiniz: `role=ROL ID`! Gereksinimleri koymayı bitirdikten sonra `done` deyin');
+            message.channel.send('Rol gereksinimlerini kullanabilirsiniz: `role=ROL ID` Örnek: `role=xxxxxxxxxx`! Gereksinimleri koymayı bitirdikten sonra `done` yazın');
 
             const rcollector = message.channel.createMessageCollector(filter, { time: 60 * 1000, max: 1000 });
 
@@ -142,7 +142,7 @@ const filter = m => m.author.id === message.author.id;
 
                 const id = m.content.split(' ').join('').split('=')[1];
 
-                if (!message.guild.roles.cache.get(id)) return message.channel.send('Bu geçerli bir rol değil.!');
+                if (!message.guild.roles.cache.get(id)) return message.channel.send('<:carpi:855750448711467058> Bu geçerli bir rol değil.!');
 
                 giveaway.requirements.roles.push(m.content.split(' ').join('').split('=')[1]);
 
@@ -152,11 +152,11 @@ const filter = m => m.author.id === message.author.id;
 
             rcollector.on('end', async (msg, r) => {
 
-                if (r == 'time') return message.channel.send('Zamanında cevap vermedin.!');
+                if (r == 'time') return message.channel.send('<:carpi:855750448711467058> Zamanında cevap vermedin.!');
 
-                if (r == 'error') return message.channel.send('Geçerli bir seçenek sunmadınız!');
+                if (r == 'error') return message.channel.send('<:carpi:855750448711467058> Geçerli bir seçenek sunmadınız!');
 
-                if (r == 'cancel') return message.channel.send('Yanlış bilgi nedeniyle iptal edilen hediye kurulumu!');
+                if (r == 'cancel') return message.channel.send('<:carpi:855750448711467058> Yanlış bilgi nedeniyle iptal edilen hediye kurulumu!');
 
                 if (r == 'done') {
 
@@ -204,7 +204,7 @@ const filter = m => m.author.id === message.author.id;
 
 } else { return message.channel.send(new Discord.MessageEmbed()
 
- .setDescription(`Bu komut premiumlulara özel!
+ .setDescription(`<:carpi:855750448711467058> Bu komut premiumlulara özel!
 Premium almak için [Destek sunucumuzu](https://discord.gg/KZfAEjrPUF) ziyaret et!`)
 
 .setTimestamp()

@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
 
   if(açıkmı) {
 
-    if (!args[0]) return message.reply('Lütfen sonuna kadar çekilişin kimliği sağlayın!', { allowedMentions: { repliedUser: false } });
+    if (!args[0]) return message.reply('<:carpi:855750448711467058> Lütfen sonuna kadar çekilişin kimliği sağlayın!', { allowedMentions: { repliedUser: false } });
 
     try {
 
@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
 
 } else { return message.channel.send(new Discord.MessageEmbed()
 
- .setDescription(`Bu komut premiumlulara özel!
+ .setDescription(`<:carpi:855750448711467058> Bu komut premiumlulara özel!
 Premium almak için [Destek sunucumuzu](https://discord.gg/KZfAEjrPUF) ziyaret et!`)
 
 .setTimestamp()
